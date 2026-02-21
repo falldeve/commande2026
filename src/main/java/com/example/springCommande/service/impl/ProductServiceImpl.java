@@ -1,8 +1,9 @@
 package com.example.springCommande.service.impl;
 
-import com.example.springCommande.dto.ProductDto;
+import com.example.springCommande.view.dtos.ProductDto;
 import com.example.springCommande.entity.Product;
-import com.example.springCommande.mapper.ProductMapper;
+import com.example.springCommande.view.exception.ResourceNotFoundException;
+import com.example.springCommande.view.mapper.ProductMapper;
 import com.example.springCommande.repository.ProductRepository;
 import com.example.springCommande.service.ProductServiceInterface;
 import lombok.RequiredArgsConstructor;
@@ -30,13 +31,16 @@ public class ProductServiceImpl implements ProductServiceInterface {
     @Override
     public ProductDto updateProductQuantity(Long id, Integer quantity) {
         Product product = productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Product not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Product non trouver avec l'id: " + id));
         product.setQuantity(quantity);
         return productMapper.toDto(productRepository.save(product));
     }
 
     @Override
     public void deleteProduct(Long id) {
+        if (!productRepository.existsById(id)) {
+            throw new ResourceNotFoundException("Product non trouver avec l'id: " + id);
+        }
         productRepository.deleteById(id);
     }
 }

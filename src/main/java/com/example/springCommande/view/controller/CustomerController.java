@@ -1,6 +1,6 @@
-package com.example.springCommande.controller;
+package com.example.springCommande.view.controller;
 
-import com.example.springCommande.dto.CustomerDto;
+import com.example.springCommande.view.dtos.CustomerDto;
 import com.example.springCommande.service.CustomerServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

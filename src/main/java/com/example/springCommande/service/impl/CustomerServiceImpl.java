@@ -1,8 +1,9 @@
 package com.example.springCommande.service.impl;
 
-import com.example.springCommande.dto.CustomerDto;
+import com.example.springCommande.view.dtos.CustomerDto;
 import com.example.springCommande.entity.Customer;
-import com.example.springCommande.mapper.CustomerMapper;
+import com.example.springCommande.view.exception.ResourceNotFoundException;
+import com.example.springCommande.view.mapper.CustomerMapper;
 import com.example.springCommande.repository.CustomerRepository;
 import com.example.springCommande.service.CustomerServiceInterface;
 import lombok.RequiredArgsConstructor;
@@ -31,13 +32,13 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
     public CustomerDto getCustomerById(Long id) {
         return customerRepository.findById(id)
                 .map(customerMapper::toDto)
-                .orElseThrow(() -> new RuntimeException("Customer not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("client non trouver avec l'id: " + id));
     }
 
     @Override
     public CustomerDto getCustomerByPhoneNumber(String phoneNumber) {
         return customerRepository.findByPhoneNumber(phoneNumber)
                 .map(customerMapper::toDto)
-                .orElseThrow(() -> new RuntimeException("Customer not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("client non trouver avec ce numero: " + phoneNumber));
     }
 }

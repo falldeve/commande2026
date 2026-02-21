@@ -1,6 +1,6 @@
-package com.example.springCommande.mapper;
+package com.example.springCommande.view.mapper;
 
-import com.example.springCommande.dto.ProductDto;
+import com.example.springCommande.view.dtos.ProductDto;
 import com.example.springCommande.entity.Product;
 import org.mapstruct.Mapper;
 

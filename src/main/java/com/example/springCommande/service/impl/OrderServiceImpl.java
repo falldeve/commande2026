@@ -1,8 +1,8 @@
 package com.example.springCommande.service.impl;
 
-import com.example.springCommande.dto.OrderDto;
+import com.example.springCommande.view.dtos.OrderDto;
 import com.example.springCommande.entity.Order;
-import com.example.springCommande.mapper.OrderMapper;
+import com.example.springCommande.view.mapper.OrderMapper;
 import com.example.springCommande.repository.OrderRepository;
 import com.example.springCommande.service.OrderServiceInterface;
 import lombok.RequiredArgsConstructor;

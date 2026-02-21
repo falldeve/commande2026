@@ -1,6 +1,6 @@
 package com.example.springCommande.service;
 
-import com.example.springCommande.dto.ProductDto;
+import com.example.springCommande.view.dtos.ProductDto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

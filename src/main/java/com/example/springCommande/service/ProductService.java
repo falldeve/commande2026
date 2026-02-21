@@ -1,8 +1,8 @@
 package com.example.springCommande.service;
 
-import com.example.springCommande.dto.ProductDto;
+import com.example.springCommande.view.dtos.ProductDto;
 import com.example.springCommande.entity.Product;
-import com.example.springCommande.mapper.ProductMapper;
+import com.example.springCommande.view.mapper.ProductMapper;
 import com.example.springCommande.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

@@ -1,4 +1,4 @@
-package com.example.springCommande.dto;
+package com.example.springCommande.view.dtos;
 
 import lombok.Data;
 
